@@ -20,7 +20,7 @@ struct AppVersion {
 
     var displayName: String { "\(version)（Build \(build)）" }
     var sourceDescription: String {
-        let channelName = channel == "local" ? "本机构建" : channel
+        let channelName = channel == "local" ? "本机构建" : (channel == "release" ? "发布构建" : channel)
         return "\(channelName) · \(revision) · \(builtAt)"
     }
     var updateStatus: String {
